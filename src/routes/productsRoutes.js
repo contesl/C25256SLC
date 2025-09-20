@@ -4,17 +4,17 @@ import {
   getAllProducts, 
   getProductById, 
   createProduct,
-  deleteProduct,   // 👈 nuevo
-  updateProduct    // 👈 nuevo
+  deleteProduct,  
+  updateProduct    
 } from "../controllers/productsController.js";  
 
 const router = express.Router();
 
-// Rutas
-router.get("/products", getAllProducts);       // GET todos los productos
-router.get("/products/:id", getProductById);   // GET producto por id
-router.post("/products", createProduct);       // POST nuevo producto
-router.delete("/products/:id", deleteProduct); // DELETE producto por id
-router.put("/products/:id", updateProduct);    // PUT actualizar producto por id
+// Rutas (ya no incluimos /products, se monta desde server.js)
+router.get("/", getAllProducts);          // GET todos los productos → /products
+router.get("/:id", getProductById);       // GET producto por id → /products/:id
+router.post("/", createProduct);          // POST nuevo producto → /products
+router.delete("/:id", deleteProduct);     // DELETE producto por id → /products/:id
+router.put("/:id", updateProduct);        // PUT actualizar producto por id → /products/:id
 
 export default router;

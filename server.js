@@ -4,11 +4,18 @@ import productsRoutes from "./src/routes/productsRoutes.js";
 const app = express();
 app.use(express.json());
 
-// Monta el router en / (porque ya tiene /products dentro)
-app.use("/", productsRoutes);
-
-app.listen(3200, () => {
-  console.log("Servidor en http://localhost:3200");
+// Ruta raíz
+app.get("/", (req, res) => {
+  res.send("API de Productos funcionando ✅");
 });
+
+// Monta el router en /products
+app.use("/products", productsRoutes);
+
+const PORT = process.env.PORT || 3200;
+app.listen(PORT, () => {
+  console.log(`Servidor en http://localhost:${PORT}`);
+});
+
 
 

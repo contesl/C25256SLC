@@ -56,7 +56,7 @@
 			"response": []
 		},
 		{
-			"name": "PUT UPDATE  TODOS LOS CAMPOS",
+			"name": "PUT UPDATE PRODUCTS",
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -100,6 +100,35 @@
 					"path": [
 						"products",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Autenticacion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"email\": \"test@test.com\", \"password\": \"1234\" }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://c25256-slc.vercel.app/login",
+					"protocol": "http",
+					"host": [
+						"c25256-slc",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"login"
 					]
 				}
 			},

@@ -28,7 +28,7 @@ Este instructivo explica paso a paso cómo probar la API Node.js desplegada en V
 1. Abre **Postman**.  
 2. Haz clic en **Import** (arriba a la izquierda).  
 3. Selecciona **Raw text** o **File**, y:
-   - Pega el contenido del archivo `.json` de la colección (el que se incluye en este repositorio).  
+   - Pega el contenido del archivo `.json` de la colección (el que se incluye en este repositorio en el directorio \docs).  
    - O selecciona el archivo exportado desde Postman.  
 4. Pulsa **Import**.  
 

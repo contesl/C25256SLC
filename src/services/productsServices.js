@@ -1,5 +1,5 @@
 // products.service.js 
-import * as productModel from "../models/productsModel.js";  // 👈 cambié a productModel para consistencia
+import * as productModel from "../models/productsModel.js";  
 
 // Obtener todos los productos
 export const getAllProducts = () => { 

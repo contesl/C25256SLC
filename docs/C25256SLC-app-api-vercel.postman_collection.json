@@ -132,7 +132,90 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "POST Autenticacion",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"email\": \"test@test.com\", \"password\": \"1234\" }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://c25256-slc.vercel.app/login",
+							"protocol": "http",
+							"host": [
+								"c25256-slc",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Content-Length",
+							"value": "181"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 27 Sep 2025 13:52:30 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"b5-P6sxmPUTEFUbIqtDlvYjghc4OL8\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "gru1::iad1::vcvz9-1758981150424-6510444bbdc8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0QHRlc3QuY29tIiwiaWF0IjoxNzU4OTgxMTUwLCJleHAiOjE3NTg5ODQ3NTB9.tKq6Os0oQje-PecO7ky5Cc22R3qSJFVLBZ-BG_KCvHw\"\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "",
+			"type": "default"
 		}
 	]
 }

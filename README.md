@@ -23,142 +23,117 @@ Este instructivo explica paso a paso cómo probar la API Node.js desplegada en V
 
 ---
 
-## 📦 2. Importar la colección en Postman
+📦 2. Importar la colección en Postman
+1.	Asegurate de estar en Collections (arriba a la izquierda)
+2.	Haz clic en Import 
+3.	Pega el contenido del archivo .json de la colección que se incluye en este repositorio en el directorio \docs).
+llamado
+   
+                  C25256SLC-app-api-vercel.postman_collection.json
+  	
 
-1. Abre **Postman**.  
-2. Haz clic en **Import** (arriba a la izquierda).  
-3. Selecciona **Raw text** o **File**, y:
-   - Pega el contenido del archivo `.json` de la colección (el que se incluye en este repositorio en el directorio \docs).  
-   - O selecciona el archivo exportado desde Postman.  
-4. Pulsa **Import**.  
+Aparecerá una colección llamada app-api-vercel con las siguientes requests:
 
-Aparecerá una colección llamada **`app-api-vercel`** con las siguientes requests:
+•	✅ POST Autenticacion
 
-- ✅ `POST Autenticacion`  
-- ✅ `GET PRODUCTS`  
-- ✅ `POST CREATE PRODUCTS`  
-- ✅ `PUT UPDATE PRODUCTS`  
-- ✅ `DELETE PRODUCTS`
+•	✅ GET PRODUCTS
 
----
+•	✅ POST CREATE PRODUCTS
 
-## ⚙️ 3. Configurar las variables del entorno
+•	✅ PUT UPDATE PRODUCTS
 
-1. En la esquina superior derecha de Postman, haz clic en el ícono de **⚙️ Environment** → **Add New Environment**.  
-2. Crea un environment llamado, por ejemplo, `API Vercel`.
-3. Agrega las siguientes variables:
+•	✅ DELETE PRODUCTS
 
-| Variable | Valor inicial | Descripción |
-|-----------|----------------|--------------|
-| `base_url` | `http://c25256-slc.vercel.app` | URL base de la API |
-| `token` | *(vacío)* | Aquí se guardará el JWT automáticamente |
 
-4. Guarda y selecciona el environment (`API Vercel`) en el selector de entornos de Postman.
 
 ---
 
-## 🔑 4. Autenticación (obtener token JWT)
-
-1. Abre la request **`POST Autenticacion`**.  
-2. En la pestaña **Body**, asegurate de que esté seleccionado **raw → JSON**.  
-3. El cuerpo debe tener este contenido:
-
-```json
-{ "email": "test@test.com", "password": "1234" }
-```
-
-4. En la pestaña **Tests** (debajo del body), pegá este script (solo si no está ya):
-
-```javascript
-// Guarda automáticamente el token devuelto por el login
-if (pm.response.code === 200) {
-  const json = pm.response.json();
-  if (json.token) {
-    pm.environment.set("token", json.token);
-    console.log("Token guardado en environment:", json.token);
-  }
-}
-```
-
-5. Haz clic en **Send**.  
-   - Si la autenticación es correcta, obtendrás una respuesta `200 OK` con un `token`.  
-   - Postman guardará ese token automáticamente en la variable `token`.
+⚙️ 3. Configurar las variables del entorno
+1.	Asegurate de estar en Environments (arriba a la izquierda)
+2.	Haz clic en Import 
+3.	Pega el contenido del archivo .json del ambiente que se incluye en el directorio \docs) llamado
+   
+                  C25256SLC-API_Vercel.postman_environment.json
+  	
+Aparecerá en Environment API_Vercel conteniendo las variables base_url y token.
 
 ---
 
-## 🔒 5. Agregar el token a las demás requests
-
-Para que las demás peticiones funcionen (productos, creación, actualización, etc.), deben incluir el token JWT.
-
-1. En la colección `app-api-vercel`, haz clic en los tres puntos `⋮` → **Edit**.  
-2. Ve a la pestaña **Authorization**.  
-3. Configura así:
-   - **Type:** `Bearer Token`
-   - **Token:** `{{token}}`
-4. Guarda los cambios con **Update**.
-
-Ahora todas las requests heredarán el token guardado automáticamente tras el login.
+🔑 4. Autenticación (obtener token JWT)
+1.	Seleccionar app_api_vercel en Collections.
+2.	Abre la request POST Autenticacion
+3.	Asegurate de que esté seleccionado el Environment API_Vercel.
+4.	Haz clic en Send.
+   
+    o	Si la autenticación es correcta, obtendrás una respuesta 200 OK con un token.
+    o	Postman guardará ese token automáticamente en la variable token.
 
 ---
 
-## 🧪 6. Probar los endpoints
-
+🧪 5. Probar los endpoints
 A continuación, ejecutá cada request en orden:
 
-### 🟢 1. `GET PRODUCTS`
-- **Método:** `GET`  
-- **URL:** `{{base_url}}/products`  
-- **Respuesta esperada:** un array de productos.
+🟢 1. GET PRODUCTS
 
----
+•	Método: GET
 
-### 🟡 2. `POST CREATE PRODUCTS`
-- **Método:** `POST`  
-- **URL:** `{{base_url}}/products`  
-- **Body → raw → JSON:**
+•	URL: {{base_url}}/products
 
-```json
-{
-  "price": 3300,
-  "name": "Producto Nuevo"
-}
-```
-- **Respuesta esperada:** el producto creado o un mensaje de éxito.
+•	Debe devolver un array de productos.
 
----
 
-### 🟠 3. `PUT UPDATE PRODUCTS`
-- **Método:** `PUT`  
-- **URL:** `{{base_url}}/products/<ID_DEL_PRODUCTO>`  
-  (Reemplazá `<ID_DEL_PRODUCTO>` por un ID válido del listado anterior)
-- **Body → raw → JSON:**
+🟡 2. POST CREATE PRODUCTS
 
-```json
-{
-  "nombre": "Producto actualizado vercel",
-  "precio": 5500
-}
-```
-- **Respuesta esperada:** el producto actualizado.
+•	Método: POST
 
----
+•	URL: {{base_url}}/products
 
-### 🔴 4. `DELETE PRODUCTS`
-- **Método:** `DELETE`  
-- **URL:** `{{base_url}}/products/<ID_DEL_PRODUCTO>`
-- **Respuesta esperada:** mensaje de confirmación o status `200 / 204`.
+•	Body → raw → JSON debe contender este formato:
 
----
+        {
+          "price": 3300,
+          "name": "Producto Nuevo"
+        }
+        
+•	Debe responder con el producto creado o un mensaje de éxito.
 
-## ⚡ 7. Flujo completo sugerido
+🟠 3. PUT UPDATE PRODUCTS
 
-1. **POST Autenticacion** → obtiene y guarda el token.  
-2. **GET PRODUCTS** → lista los productos.  
-3. **POST CREATE PRODUCTS** → agrega uno nuevo.  
-4. **GET PRODUCTS** → verifica que el producto aparezca.  
-5. **PUT UPDATE PRODUCTS** → actualiza un producto existente.  
-6. **DELETE PRODUCTS** → elimina un producto.  
-7. **GET PRODUCTS** → confirma que ya no esté.
+•	Método: PUT
+
+•	URL: {{base_url}}/products/<ID_DEL_PRODUCTO>
+
+      (Reemplazá <ID_DEL_PRODUCTO> con los datos de body)
+      
+•	Body → raw → JSON debe contener este formato:
+
+      {
+        "nombre": "Producto actualizado vercel",
+        "precio": 5500
+      }
+      
+•	Debe devolver el producto actualizado.
+
+🔴 4. DELETE PRODUCTS
+
+•	Método: DELETE
+
+•	URL: {{base_url}}/products/<ID_DEL_PRODUCTO>
+
+      (Eliminará el  <ID_DEL_PRODUCTO> que se provee)
+      
+•	Elimina el producto indicado (revisa la respuesta o status 200/204).
+
+________________________________________
+⚡ 7. Flujo completo sugerido
+1.	POST Autenticacion → obtiene y guarda el token.
+2.	GET PRODUCTS → lista los productos.
+3.	POST CREATE PRODUCTS → agrega uno nuevo.
+4.	GET PRODUCTS → verifica que el producto aparezca.
+5.	PUT UPDATE PRODUCTS → actualiza un producto existente.
+6.	DELETE PRODUCTS → elimina un producto.
+7.	GET PRODUCTS → confirma que ya no esté.
+________________________________________
 
 ---
 

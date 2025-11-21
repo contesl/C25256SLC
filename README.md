@@ -73,35 +73,39 @@ Aparecerá en Environment API_Vercel conteniendo las variables base_url y token.
 A continuación, ejecutá cada request en orden:
 
 🟢 1. GET PRODUCTS
+
 •	Método: GET
 •	URL: {{base_url}}/products
 •	Debe devolver un array de productos.
 
 🟡 2. POST CREATE PRODUCTS
+
 •	Método: POST
 •	URL: {{base_url}}/products
 •	Body → raw → JSON debe contender este formato:
-{
-  "price": 3300,
-  "name": "Producto Nuevo"
-}
+        {
+          "price": 3300,
+          "name": "Producto Nuevo"
+        }
 •	Debe responder con el producto creado o un mensaje de éxito.
 
 🟠 3. PUT UPDATE PRODUCTS
+
 •	Método: PUT
 •	URL: {{base_url}}/products/<ID_DEL_PRODUCTO>
 (Reemplazá <ID_DEL_PRODUCTO> con los datos de body)
 •	Body → raw → JSON debe contener este formato:
-{
-  "nombre": "Producto actualizado vercel",
-  "precio": 5500
-}
+      {
+        "nombre": "Producto actualizado vercel",
+        "precio": 5500
+      }
 •	Debe devolver el producto actualizado.
 
 🔴 4. DELETE PRODUCTS
+
 •	Método: DELETE
 •	URL: {{base_url}}/products/<ID_DEL_PRODUCTO>
-(Eliminará el  <ID_DEL_PRODUCTO> que se provee)
+      (Eliminará el  <ID_DEL_PRODUCTO> que se provee)
 •	Elimina el producto indicado (revisa la respuesta o status 200/204).
 
 ________________________________________

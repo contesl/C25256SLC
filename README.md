@@ -26,11 +26,11 @@ Este instructivo explica paso a paso cómo probar la API Node.js desplegada en V
 📦 2. Importar la colección en Postman
 1.	Asegurate de estar en Collections (arriba a la izquierda)
 2.	Haz clic en Import 
-3.	Pega el contenido del archivo .json de la colección llamado
+3.	Pega el contenido del archivo .json de la colección que se incluye en este repositorio en el directorio \docs).
+llamado
    
                   C25256SLC-app-api-vercel.postman_collection.json
   	
-que se incluye en este repositorio en el directorio \docs).
 
 Aparecerá una colección llamada app-api-vercel con las siguientes requests:
 
@@ -51,9 +51,10 @@ Aparecerá una colección llamada app-api-vercel con las siguientes requests:
 ⚙️ 3. Configurar las variables del entorno
 1.	Asegurate de estar en Environments (arriba a la izquierda)
 2.	Haz clic en Import 
-3.	Pega el contenido del archivo .json del ambiente llamado
+3.	Pega el contenido del archivo .json del ambiente que se incluye en el directorio \docs) llamado
+   
                   C25256SLC-API_Vercel.postman_environment.json
-que se incluye en este repositorio en el directorio \docs).
+  	
 Aparecerá en Environment API_Vercel conteniendo las variables base_url y token.
 
 ---
@@ -63,17 +64,19 @@ Aparecerá en Environment API_Vercel conteniendo las variables base_url y token.
 2.	Abre la request POST Autenticacion
 3.	Asegurate de que esté seleccionado el Environment API_Vercel.
 4.	Haz clic en Send.
-o	Si la autenticación es correcta, obtendrás una respuesta 200 OK con un token.
-o	Postman guardará ese token automáticamente en la variable token.
+    o	Si la autenticación es correcta, obtendrás una respuesta 200 OK con un token.
+    o	Postman guardará ese token automáticamente en la variable token.
 
 ---
 
 5. Probar los endpoints
 A continuación, ejecutá cada request en orden:
+
 🟢 1. GET PRODUCTS
 •	Método: GET
 •	URL: {{base_url}}/products
 •	Debe devolver un array de productos.
+
 🟡 2. POST CREATE PRODUCTS
 •	Método: POST
 •	URL: {{base_url}}/products
@@ -83,6 +86,7 @@ A continuación, ejecutá cada request en orden:
   "name": "Producto Nuevo"
 }
 •	Debe responder con el producto creado o un mensaje de éxito.
+
 🟠 3. PUT UPDATE PRODUCTS
 •	Método: PUT
 •	URL: {{base_url}}/products/<ID_DEL_PRODUCTO>
@@ -93,11 +97,13 @@ A continuación, ejecutá cada request en orden:
   "precio": 5500
 }
 •	Debe devolver el producto actualizado.
+
 🔴 4. DELETE PRODUCTS
 •	Método: DELETE
 •	URL: {{base_url}}/products/<ID_DEL_PRODUCTO>
 (Eliminará el  <ID_DEL_PRODUCTO> que se provee)
 •	Elimina el producto indicado (revisa la respuesta o status 200/204).
+
 ________________________________________
 ⚡ 7. Flujo completo sugerido
 1.	POST Autenticacion → obtiene y guarda el token.

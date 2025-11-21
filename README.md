@@ -29,7 +29,9 @@ Este instructivo explica paso a paso cómo probar la API Node.js desplegada en V
 3.	Pega el contenido del archivo .json de la colección llamado
                   C25256SLC-app-api-vercel.postman_collection.json 
 que se incluye en este repositorio en el directorio \docs).
+
 Aparecerá una colección llamada app-api-vercel con las siguientes requests:
+
 •	✅ POST Autenticacion
 •	✅ GET PRODUCTS
 •	✅ POST CREATE PRODUCTS

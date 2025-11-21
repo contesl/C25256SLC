@@ -64,12 +64,13 @@ Aparecerá en Environment API_Vercel conteniendo las variables base_url y token.
 2.	Abre la request POST Autenticacion
 3.	Asegurate de que esté seleccionado el Environment API_Vercel.
 4.	Haz clic en Send.
+   
     o	Si la autenticación es correcta, obtendrás una respuesta 200 OK con un token.
     o	Postman guardará ese token automáticamente en la variable token.
 
 ---
 
-5. Probar los endpoints
+🧪 5. Probar los endpoints
 A continuación, ejecutá cada request en orden:
 
 🟢 1. GET PRODUCTS

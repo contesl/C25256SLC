@@ -121,7 +121,7 @@ A continuación, ejecutá cada request en orden:
 
 •	URL: {{base_url}}/products/<ID_DEL_PRODUCTO>
 
-      (Eliminará el  <ID_DEL_PRODUCTO> que se provee)
+      (Eliminará el producto con el <ID_DEL_PRODUCTO> que se provee)
       
 •	Elimina el producto indicado (revisa la respuesta o status 200/204).
 

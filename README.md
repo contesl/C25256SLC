@@ -89,7 +89,7 @@ A continuación, ejecutá cada request en orden:
 
 •	URL: {{base_url}}/products
 
-•	Body → raw → JSON debe contender este formato:
+•	Body → raw → JSON debe contener este formato (aqui se incluye con datos a manera de ejemplo) :
 
         {
           "price": 3300,
@@ -104,9 +104,9 @@ A continuación, ejecutá cada request en orden:
 
 •	URL: {{base_url}}/products/<ID_DEL_PRODUCTO>
 
-      (Reemplazá <ID_DEL_PRODUCTO> con los datos del ID del producto a modifica)
+      (Reemplazá <ID_DEL_PRODUCTO> con los datos del ID del producto a modificar)
       
-•	Body → raw → JSON debe contener este formato:
+•	Body → raw → JSON debe contener este formato (aqui se incluye con datos a manera de ejemplo):
 
       {
         "nombre": "Producto actualizado vercel",

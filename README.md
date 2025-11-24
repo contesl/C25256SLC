@@ -66,6 +66,7 @@ Aparecerá en Environment API_Vercel conteniendo las variables base_url y token.
 4.	Haz clic en Send.
    
     o	Si la autenticación es correcta, obtendrás una respuesta 200 OK con un token.
+  	
     o	Postman guardará ese token automáticamente en la variable token.
 
 ---

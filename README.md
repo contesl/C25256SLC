@@ -174,6 +174,6 @@ Sabés que la API funciona correctamente si:
 
 ---
 
-📘 **Autor:** Sergio  
+📘 **Autor:** Sergio Luis Conte para Backend NodeJS Comision 25256 
 🧩 **Stack:** Node.js + Express + Firebase Firestore + JWT  
 ☁️ **Deploy:** [Vercel](https://vercel.com)

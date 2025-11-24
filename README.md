@@ -104,7 +104,7 @@ A continuación, ejecutá cada request en orden:
 
 •	URL: {{base_url}}/products/<ID_DEL_PRODUCTO>
 
-      (Reemplazá <ID_DEL_PRODUCTO> con los datos de body)
+      (Reemplazá <ID_DEL_PRODUCTO> con los datos del ID del producto a modifica)
       
 •	Body → raw → JSON debe contener este formato:
 
